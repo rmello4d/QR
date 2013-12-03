@@ -1,11 +1,10 @@
-(function() {
+WAF.define('QR', function() {
+
     "use strict";
     var widget = WAF.require('waf-core/widget');
-    var event = WAF.require('waf-core/event');
     var QR = widget.create('QR');
      
     QR.prototype.init = function () {
-        //console.log('init');
     	var qrcode,
     		width,
     		height,
@@ -28,7 +27,6 @@
     	
         $(this.node).empty();
     	this._QR = new QRCode(this.node, params);
-        //console.log(this._QR);
         
     };
      
@@ -78,6 +76,14 @@
     
     // adding the content property and defining the set method called for the property
     QR.addProperty('content', {
+        onChange: QR.prototype.setContent
+    });
+    
+    return QR;
+    
+    
+});
+ntent', {
         default_value: 'Default',
         setter: QR.prototype.setContent
     });

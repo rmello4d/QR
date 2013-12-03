@@ -17,8 +17,8 @@
     "loadDependencies": [
     	{"id": "Widget_V2"},
         {"id": "QR/widget.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
-        {"id": "QR/qrcodejs/qrcode.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
-        {"id": "QR/css/widget.css", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "QR/qrcodejs/qrcode.min.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "QR/css/widget.css", "version": "1.0.0","studioOnly": true, "path": "WIDGETS_CUSTOM"},
         {"id": "QR/designer.js", "studioOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"}
     ]
 }
