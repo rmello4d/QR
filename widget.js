@@ -83,10 +83,3 @@ WAF.define('QR', function() {
     
     
 });
-ntent', {
-        default_value: 'Default',
-        setter: QR.prototype.setContent
-    });
-    
-    
-})();
