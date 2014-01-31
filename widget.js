@@ -1,5 +1,4 @@
 WAF.define('QR', function() {
-
     "use strict";
     var widget = WAF.require('waf-core/widget');
     var QR = widget.create('QR');
@@ -27,7 +26,10 @@ WAF.define('QR', function() {
     	
         $(this.node).empty();
     	this._QR = new QRCode(this.node, params);
+    	
+    	this.content.onChange(function (value) {this.repaint();});
         
+        this.repaint();
     };
      
    
@@ -37,49 +39,12 @@ WAF.define('QR', function() {
      * @method repaint 
      * 
       */
-    QR.prototype.repaint = function () {
-
-    	this._QR.clear();
-    	
-        // check if contentQR is not null/undef
-        if(this._contentQR)
-            this._QR.makeCode(this._contentQR);
-        
+    QR.prototype.repaint = function (val) {
+        this._QR.makeCode(this.content());
     };
-    
-    
-     /**
-     * This method returns the QR content
-     * @class QR
-     * @method getContent 
-     * 
-      */
-    QR.prototype.getContent = function () {
-        return this._contentQR;
-       
-    };
-    
-     /**
-     * This method set the QR content and repaints the widget
-     * @class QR
-     * @method setContent 
-     * 
-      */
-    QR.prototype.setContent = function (value) {
-    	if (this._contentQR != value) {
-     	   this._contentQR = value;
-     	   this.repaint();
-    	}
-    };
-    
-    
     
     // adding the content property and defining the set method called for the property
-    QR.addProperty('content', {
-        onChange: QR.prototype.setContent
-    });
+    QR.addProperty('content', {defaultValue: ''});
     
     return QR;
-    
-    
 });
