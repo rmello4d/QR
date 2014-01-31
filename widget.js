@@ -44,7 +44,7 @@ WAF.define('QR', function() {
     };
     
     // adding the content property and defining the set method called for the property
-    QR.addProperty('content');
+    QR.addProperty('content', {defaultValue: ''});
     
     return QR;
 });
