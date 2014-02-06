@@ -40,7 +40,7 @@ WAF.define('QR', function() {
      * 
       */
     QR.prototype.repaint = function (val) {
-        this._QR.makeCode(this.content());
+        this._QR.makeCode((this.content())?this.content():'');
     };
     
     // adding the content property and defining the set method called for the property
