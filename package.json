@@ -6,6 +6,7 @@
 	    "Jean Bernard Piot"
 	],
     "version": "1.0.0",
+    "engines" : { wakanda : ["8", "9"] },
     "copyright": "(c) 2013 Widget Developer",
 	"repository": {
 	    "type": "git",
